@@ -22,7 +22,16 @@ Install nodejs, npm, jq, curl, docker,and forever
 
 <b>Required for automated scripts:</b><br>
 Telegram bot token : https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token <br>
-Telegream chat id: https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id
+Telegream chat id: https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id<br>
+
+Run:<br>
+<ol>
+<li>cd Cosmic_Installer/node-cron-jobs</li>
+<li>sudo npm i shelljs</li>
+<li>sudo npm i express</li>
+<li>sudo npm i node-cron</li>
+<li>sudo npm i forever -g</li>
+</ol><br>
 
 <b>Required for installing a new node:</b><br>
 Create an https://etherscan.io/ account and create a new api in the account section. Copy the API and use it in your config. This is to check and ensure you have enough tokens and gas to complete a node install.
