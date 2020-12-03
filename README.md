@@ -1,6 +1,6 @@
 # Cosmic_Installer
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-The Cosmic Installer is a general purpose tool used to streamline the interaction between an OriginTrail DKG node. 
+The Cosmic Installer is a general purpose tool used to streamline the interaction between an OriginTrail DKG node.
 <br><br>
 Before running the installer, please see the instructions below and <b>requirements</b> below.
 <br>
@@ -42,7 +42,8 @@ Run sudo docker update --restart=always otnode to make sure the node restart on 
 <li>Run git clone https://github.com/CosmiCloud/Cosmic_Installer.git</li>
 <li>Run cd Cosmic_Installer</li>
 <li>Rename the example-installer_config.json file in your directory to intstaller_config.json.</li>
-<li><b>Set and ensure all configurations in the installer config are correct.</b></li>
+<li><b>Set and ensure all configurations in the installer config are correct.</b><br>
+  NOTE: Leave node.enabled : "false" if you want to make sure the installer DOES NOT interact with your current node config.</li>
 <li>Run sudo node start_installer.js</li>
 </ol><br>
 
