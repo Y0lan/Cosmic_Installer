@@ -1,0 +1,127 @@
+{
+      "node":{
+        "enabled" : "false",
+        "network" : "testnet",
+        "node_wallet" : "*operational wallet here*",
+        "node_private_key" : "*operational private key here*",
+        "management_wallet" : "*management wallet here*",
+        "disable_auto_payouts" : "true",
+        "gas_price" : "20000000000",
+        "rpc_server_url" : "*web3 provider or eth1 node grpc here*",
+        "dh_price_factor" : "0.10",
+        "max_allowed_gas_price" : "200000000000",
+        "dh_max_holding_time_in_minutes" : "262800",
+        "hostname" : "*server IP here*",
+        "etherscan_api" : "*etherscan api here*"
+        },
+      "scripts":{
+        "node_name" : "*Your node name here*",
+        "telegram_chat_id" : "*telegram chat id here*",
+        "aws_region" : "*aws region here*",
+        "aws_access_key_id" : "*aws access key id here",
+        "aws_secret_access_key" : "*aws secrect access key here*",
+        "aws_bucket_name" : "aws bucket name here",
+        "aws_bucket_filepath" : "aws bucket/path/to/backup/",
+        "backup_filepath" : "~/path/to/local/backup",
+        "log_notifications" :{
+          "enabled" : "true",
+          "telegram_bot_token" : "*telegram bot token here*",
+          "frequency" : "*/5 * * * *",
+          "notifications" :{
+            "job_won_detection":{
+              "enabled" : "true",
+              "searchfor" : "'ve been chosen'",
+              "since" : "5m",
+              "header" : "New offer accepted!"
+            },
+            "memory_leak_detection":{
+              "enabled" : "false",
+              "searchfor" : "'memory leak detected'",
+              "since" : "5m",
+              "header" : "Memory Leak"
+            },
+            "unhandled_rejection_detection":{
+              "enabled" : "true",
+              "searchfor" : "'Unhandled Rejection'",
+              "since" : "20m",
+              "header" : "Unhandled Rejection"
+
+            },
+            "timeout_detection":{
+              "enabled" : "true",
+              "searchfor" : "'Timed out waiting for response'",
+              "since" : "5m",
+              "header" : "Timed out"
+            },
+            "fatal_error_detection":{
+              "enabled" : "true",
+              "searchfor" : "'fatal'",
+              "since" : "5m",
+              "header" : "FATAL ERROR - ATTENTION REQUIRED"
+            },
+            "low_eth_detection":{
+              "enabled" : "true",
+              "searchfor" : "'ETH balance lower'",
+              "since" : "5m",
+              "header" : "Low ether balance"
+            },
+            "low_trac_detection":{
+              "enabled" : "true",
+              "searchfor" : "'Not enough tokens.'",
+              "since" : "5m",
+              "header" : "Low trac balance"
+            },
+            "high_gas_detection":{
+              "enabled" : "true",
+              "searchfor" : "'Gas price too high'",
+              "since" : "5m",
+              "header" : "Gas price too high"
+            },
+            "kademlia_warning_detection":{
+              "enabled" : "false",
+              "searchfor" : "'KADemlia'",
+              "since" : "5m",
+              "header" : "KADemlia warning"
+            },
+            "node_update_detection":{
+              "enabled" : "true",
+              "searchfor" : "'Downloading update:'",
+              "since" : "5m",
+              "header" : "Update in progress"
+            },
+            "too_cheap_detection":{
+              "enabled" : "true",
+              "searchfor" : "'too cheap'",
+              "since" : "5m",
+              "header" : "Offer too cheap"
+            },
+            "litigation_detection":{
+              "enabled" : "true",
+              "searchfor" : "'Litigation initiated'",
+              "since" : "5m",
+              "header" : "Litigation initiated"
+            }
+          }
+        },
+        "log_archiving":{
+          "enabled" : "true",
+          "telegram_bot_token" : "*telegram bot token here*",
+          "frequency" : "0 0 1 * *"
+        },
+        "auto_system_updates":{
+          "enabled" : "true",
+          "telegram_bot_token" : "*telegram bot token here*",
+          "frequency" : "0 4 * * 0"
+        },
+        "aws_backup":{
+          "enabled" : "true",
+          "telegram_bot_token" : "*telegram bot token here*",
+          "frequency" : "0 0 * * 0"
+        },
+        "heartbeat":{
+          "enabled" : "true",
+          "telegram_bot_token" : "*telegram bot token here*",
+          "frequency" : "* * * * *"
+        }
+      }
+  }
