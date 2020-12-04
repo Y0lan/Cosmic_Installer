@@ -25,7 +25,7 @@ Telegream chat id: https://stackoverflow.com/questions/32423837/telegram-bot-how
 
 Run:<br>
 <ol>
-<li>cd Cosmic_Installer/node-cron-jobs</li>
+<li>cd Cosmic_Installer/cron-jobs-node</li>
 <li>sudo npm i shelljs</li>
 <li>sudo npm i express</li>
 <li>sudo npm i node-cron</li>
