@@ -7,7 +7,7 @@ const json = require('../../installer_config.json');
 var config = json;
 var node_name = config.scripts.node_name;
 
-const token = config.scripts.heartbeat.telegram_bot_token;
+const token = config.scripts.log_archiving.telegram_bot_token;
 const chatId = config.scripts.telegram_chat_id
 
 const client = new TelegramClient({
@@ -50,7 +50,7 @@ async function logarchiving(){
 
         await client.sendMessage(chatId, node_name+ ' logs have been archived.', {
           disableWebPagePreview: true,
-          disableNotification: true,
+          disableNotification: false,
         });
 
         return;
@@ -58,7 +58,7 @@ async function logarchiving(){
     console.log(e);
     await client.sendMessage(chatId, node_name+ ' logs failed to archived.', {
       disableWebPagePreview: true,
-      disableNotification: true,
+      disableNotification: false,
     });
     return;
   }

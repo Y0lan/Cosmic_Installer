@@ -8,7 +8,6 @@ var notifications = config.scripts.log_notifications.notifications;
 var notif_count  = Object.keys(notifications).length;
 var notif_count = Number(notif_count);
 
-const token = config.scripts.heartbeat.telegram_bot_token;
 const chatId = config.scripts.telegram_chat_id;
 
 const client = new TelegramClient({
@@ -33,6 +32,11 @@ async function notification(){
         var since = obj.since
         var header = obj.header
 
+        const token = obj.telegram_bot_token;
+        const client = new TelegramClient({
+          accessToken: token,
+        });
+
         if(enabled == 'true'){
             const command = 'sudo docker logs --since '+obj.since+' otnode | grep '+obj.searchfor
             const header = node_name + ' - '+obj.header
@@ -43,7 +47,7 @@ async function notification(){
               }else{
                 client.sendMessage(chatId, header + stdout , {
                   disableWebPagePreview: true,
-                  disableNotification: true,
+                  disableNotification: false,
                 });
               }
             });

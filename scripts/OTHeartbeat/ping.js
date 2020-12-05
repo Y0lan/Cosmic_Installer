@@ -31,7 +31,7 @@ async function ping(){
     }else if(running == 'false'){
         await client.sendMessage(chatId, '!!URGENT!! - '+node_name+ ' is not running!', {
           disableWebPagePreview: true,
-          disableNotification: true,
+          disableNotification: false,
         });
         return;
     }

@@ -5,7 +5,7 @@ const json = require('../../installer_config.json');
 var config = json;
 var node_name = config.scripts.node_name;
 
-const token = config.scripts.heartbeat.telegram_bot_token;
+const token = config.scripts.aws_backup.telegram_bot_token;
 const chatId = config.scripts.telegram_chat_id
 
 const client = new TelegramClient({
@@ -31,19 +31,19 @@ var upload = 'sudo docker exec otnode node scripts/backup-upload-aws.js --config
       if (error){
         client.sendMessage(chatId, node_name+ ' system update failed: '+error, {
           disableWebPagePreview: true,
-          disableNotification: true,
+          disableNotification: false,
         });
       }else{
         client.sendMessage(chatId, node_name+ ' AWS backup script triggered. If your configuration was correct, you can check AWS S3 to find your backup.', {
           disableWebPagePreview: true,
-          disableNotification: true,
+          disableNotification: false,
         });
       }
     });
   }catch(e){
     client.sendMessage(chatId, node_name+ ' AWS script failed to trigger: '+e, {
       disableWebPagePreview: true,
-      disableNotification: true,
+      disableNotification: false,
     });
     return;
   }
