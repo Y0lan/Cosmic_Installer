@@ -10,10 +10,6 @@ var notif_count = Number(notif_count);
 
 const chatId = config.scripts.telegram_chat_id;
 
-const client = new TelegramClient({
-  accessToken: token,
-});
-
 client.getWebhookInfo().catch((error) => {
   console.log(error); // formatted error message
   console.log(error.stack); // error stack trace
