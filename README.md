@@ -17,6 +17,7 @@ Install nodejs, npm, jq, curl, docker,and forever
 <li>sudo apt install jq -y</li>
 <li>sudo apt install curl -y</li>
 <li>sudo apt install docker.io -y</li>
+<li>sudo apt-get install zip unzip -y</li>
 </ul><br>
 
 <b>Required for automated scripts:</b><br>
