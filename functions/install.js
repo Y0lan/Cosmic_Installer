@@ -101,84 +101,16 @@ module.exports ={
       return'fail';
     }
   },
-
-  awscli : async function aws() {
-    //check for aws cliversion
-    try {
-      var version_query = 'sudo aws --version';
-      await exec(version_query);
-
-      var echo = 'echo $?'
-      const awscode = await exec(echo);
-      //if installed do nothing
-      if(awscode.stdout == '0'){
-        return'success';
-      }else{
-        (async () => {
-        console.log('\x1b[33m',"AWS cli v2 is required to restore a node directly from AWS.");
-        console.log('\x1b[35m',"Feel free to manually move the back up onto your server and use the local restore or manually install aws cli 2 yourself.",'\n');
-
-        const response = await prompts({
-          type: 'text',
-          name: 'response',
-          message: '\x1b[35mWould you like to install aws cli and proceed?(y/n)'
-        });
-
-        if(response.response == 'y' || response.response == 'yes'){
-          console.log('\x1b[35m',"Downloading aws cli v2...");
-            var awsdl = 'sudo curl --silent "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o ~/awscliv2.zip > /dev/null 2>&1'
-            await exec(awsdl);
-            console.log('\x1b[32m',"Aws cli downloaded.",'\n');
-
-            //unzip download
-            console.log('\x1b[35m',"Extracting files...");
-            console.log('\x1b[35m',"This may take a while...");
-            var unzipaws = 'sudo unzip ~/awscliv2.zip -d ~/'
-            await exec(unzipaws,{maxBuffer: 1024 * 1000});
-
-            console.log('\x1b[32m',"aws cli v2 files extracted.",'\n');
-            //remove zip
-            var rmaws = 'sudo rm -rf ~/awscliv2.zip'
-            await exec(rmaws);
-
-            //install aws cli
-            console.log('\x1b[35m',"Installing aws cli v2...");
-            var installaws = '../aws/install --update'
-            await exec(installaws);
-            console.log('\x1b[32m',"AWS cli v2 installed",'\n');
-
-            var config = json;
-            console.log('\x1b[35m',"Configuring aws cli v2...");
-            var region = 'sudo aws configure set region '+config.scripts.aws_region
-            await exec(region);
-
-            var accesskey = 'sudo aws configure set aws_access_key_id '+config.scripts.aws_access_key_id
-            await exec(accesskey);
-
-            var secretkey = 'sudo aws configure set aws_secret_access_key '+config.scripts.aws_secret_access_key
-            await exec(secretkey);
-
-            console.log('\x1b[32m',"AWS cli v2 configured.",'\n');
-          }else{
-            console.log('\x1b[31m',"Exited Install Menu.");
-          }
-        })();
-      }
-    } catch (e) {
-       console.error('\x1b[31m',e); // should contain code (exit code) and signal (that caused the termination).
-       return'fail';
-    }
-  },
   //restore from from aws
   restore: async function restore(){
     //install aws cli v2
     try {
       if(network == 'testnet'){
         var image =  "sudo docker create -i --log-driver json-file --log-opt max-size=1g --name=otnode -p 8900:8900 -p 5278:5278 -p 3000:3000 -v /root/.origintrail_noderc:/ot-node/.origintrail_noderc quay.io/origintrail/otnode:release_testnet"
-        var restore =  "sudo ~/OTRestore/restore.sh --environment=testnet --backupDir=/root/"
+        var restore =  "sudo ~/OTRestore/restore.sh --environment=testnet --backupDir=/root/OTawsbackup"
       }else if(network == 'mainnet'){
         var image =  "sudo docker create -i --log-driver json-file --log-opt max-size=1g --name=otnode -p 8900:8900 -p 5278:5278 -p 3000:3000 -v /root/.origintrail_noderc:/ot-node/.origintrail_noderc quay.io/origintrail/otnode:release_mainnet"
-        var restore =  "sudo ~/OTRestore/restore.sh --environment=mainnet --backupDir=/root/"
+        var restore =  "sudo ~/OTRestore/restore.sh --environment=mainnet --backupDir=/root/OTawsbackup"
       }else{
         console.log('\x1b[31m',"Please use a valid network.");
         return'fail';

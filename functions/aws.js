@@ -90,7 +90,7 @@ module.exports = {
 
           //install aws cli
           console.log('\x1b[35m',"Installing aws cli v2...");
-          var installaws = '../aws/install --update'
+          var installaws = 'sudo /root/aws/install --update'
           await exec(installaws);
           console.log('\x1b[32m',"AWS cli v2 installed",'\n');
 
