@@ -10,14 +10,6 @@ var notif_count = Number(notif_count);
 
 const chatId = config.scripts.telegram_chat_id;
 
-client.getWebhookInfo().catch((error) => {
-  console.log(error); // formatted error message
-  console.log(error.stack); // error stack trace
-  console.log(error.config); // axios request config
-  console.log(error.request); // HTTP request
-  console.log(error.response); // HTTP response
-});
-
 async function notification(){
   try{
     for(var i = 0; i < notif_count; i++) {
