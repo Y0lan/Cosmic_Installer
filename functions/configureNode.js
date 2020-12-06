@@ -37,7 +37,7 @@ module.exports={
 
       //enable firewall
       console.log('\x1b[35m',"Enabling firewall...");
-      var enable_firewall = 'sudo ufw enable'
+      var enable_firewall = 'sudo ufw enable -y'
       await exec(enable_firewall);
       console.log('\x1b[32m',"Firewall enabled.",'\n');
 
