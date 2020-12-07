@@ -114,10 +114,10 @@ The installer config will still be used if you decide to go with this option.<br
 
 Place the following in your crontab and make sure the path to the scripts are correct:<br>
 
-*/5 * * * * cd /path/to/Cosmic_Installer/scripts/OTLogNotifications && sudo node Notification.js<br>
-0 0 1 * * cd /path/to/Cosmic_Installer/scripts/OTLogArchiving && sudo node archive.js<br>
-0 0 * * 0 cd /path/to/Cosmic_Installer/scripts/OTUpload && sudo node upload.js<br>
-***** cd /path/to/Cosmic_Installer/scripts/OTHeartbeat && sudo node ping.js<br>
-0 4 * * 0 cd /path/to/Cosmic_Installer/scripts/OTSysUpdate && sudo node update.js
+*/5 * * * * root cd /path/to/Cosmic_Installer/scripts/OTLogNotifications && sudo node Notification.js<br>
+0 0 1 * * root cd /path/to/Cosmic_Installer/scripts/OTLogArchiving && sudo node archive.js<br>
+0 0 * * 0 root cd /path/to/Cosmic_Installer/scripts/OTUpload && sudo node upload.js<br>
+***** root cd /path/to/Cosmic_Installer/scripts/OTHeartbeat && sudo node ping.js<br>
+0 4 * * 0 root cd /path/to/Cosmic_Installer/scripts/OTSysUpdate && sudo node update.js
 
 
