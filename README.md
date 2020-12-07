@@ -51,7 +51,7 @@ Run sudo docker update --restart=always otnode to make sure the node restart on 
 <li>Run sudo apt update && sudo apt upgrade -y</li>
 <li>Run git clone https://github.com/CosmiCloud/Cosmic_Installer.git</li>
 <li>Run cd Cosmic_Installer</li>
-<li>Rename the example-installer_config.json file in your directory to intstaller_config.json.</li>
+<li>Rename the example-installer_config.json file in your directory to installer_config.json.</li>
 <li><b>Set and ensure all configurations in the installer config are correct.</b><br>
   NOTE: Leave node.enabled : "false" if you want to make sure the installer DOES NOT interact with your current node config.</li>
 <li>Run sudo node start_installer.js</li>
