@@ -22,7 +22,7 @@ Install nodejs, npm, jq, curl, docker,and forever
 
 <b>Required for automated scripts:</b><br>
 Telegram bot token : https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token <br>
-Telegream chat id: https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id<br>
+Telegram chat ID: add @getidsbot to telegram. Type /start. It will tell you your chat ID.<br>
 
 Run:<br>
 <ol>
