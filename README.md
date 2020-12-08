@@ -33,6 +33,19 @@ Run:<br>
 <li>sudo npm i forever -g</li>
 </ol><br>
 
+<b>Troubleshooting forever:</b> (optional if you are having script issues)<br>
+
+After installing the npm modules, run the following command:<br>
+
+sudo forever list<br>
+
+If it shows an uptime then all is well. However, if it says STOPPED under "uptime", then it did not install properly. In that case, reinstall the npm modules by doing this:<br>
+
+cd ~/Cosmic_Installer/cron-jobs-node/<br>
+sudo rm -rf node_modules<br>
+re run the npm modules from github readme<br>
+restart scripts<br>
+
 <b>Required for installing a new node:</b><br>
 Create an https://etherscan.io/ account and create a new api in the account section. Copy the API and use it in your config. This is to check and ensure you have enough tokens and gas to complete a node install.
 
