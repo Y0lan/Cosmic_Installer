@@ -63,6 +63,7 @@ module.exports ={
       var awssecretaccesskey = config.scripts.aws_secret_access_key;
 
       console.log('\x1b[35m',"Backing up node and sending it to AWS bucket "+awsbucket+"...");
+      console.log('\x1b[35m',"This could take several minutes depending on the amount of data stored on your node.");
       var upload = 'sudo docker exec otnode node scripts/backup-upload-aws.js --config=/ot-node/.origintrail_noderc --configDir=/ot-node/data --backupDirectory=/ot-node/backup --AWSAccessKeyId='+awsaccesskeyid +' --AWSSecretAccessKey='+awssecretaccesskey+' --AWSBucketName=' + awsbucket
       await exec(upload);
       console.log('\x1b[32m',"AWS backup triggered, if your configuration was correct, you can check AWS S3 to find your backup.");
