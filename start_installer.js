@@ -216,9 +216,9 @@ try{
               console.log('\x1b[35m', "Automated AWS Backups: ",'\x1b[31m', "             [Disabled]");
             }
             if(sys_up == 'true'){
-              console.log('\x1b[35m', "Automated Automated System Updates: ",'\x1b[32m', "[Enabled]",'\n');
+              console.log('\x1b[35m', "Automatic System Updates: ",'\x1b[32m', "          [Enabled]",'\n');
             }else{
-              console.log('\x1b[35m', "Automated Automated System Updates: ",'\x1b[31m', "[Disabled]",'\n');
+              console.log('\x1b[35m', "Automatic System Updates: ",'\x1b[31m', "          [Disabled]",'\n');
             }
 
             console.log('\x1b[35m', "[1] - Start maintenance scripts");
