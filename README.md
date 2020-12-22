@@ -61,7 +61,7 @@ Run sudo docker update --restart=always otnode to make sure the node restart on 
 
 <ol>
 <li>Open terminal</li>
-<li>Run sudo apt update && sudo apt upgrade -y</li>
+<li>Run sudo apt update -y && sudo apt upgrade -y</li>
 <li>Run git clone https://github.com/CosmiCloud/Cosmic_Installer.git</li>
 <li>Run cd Cosmic_Installer</li>
 <li>Rename the example-installer_config.json file in your directory to installer_config.json.</li>
