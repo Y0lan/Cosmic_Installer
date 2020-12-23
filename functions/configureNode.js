@@ -62,12 +62,12 @@ module.exports={
         '"node_private_key"'+': '+'"'+node_private_key+'"'+", "+os.EOL+
         '"management_wallet"'+': '+'"'+management_wallet+'"'+", "+os.EOL+
         '"disableAutoPayouts"'+": true, "+os.EOL+
+        '"dh_max_holding_time_in_minutes"'+': '+'"'+dh_max_holding_time_in_minutes+'", ' +os.EOL+
         '"blockchain"'+": { "+os.EOL+
         '"gas_price"'+': '+'"'+gas_price+'"'+", "+os.EOL+
         '"rpc_server_url"'+': '+'"'+rpc_server_url+'"'+", "+os.EOL+
         '"dh_price_factor"'+': '+'"'+dh_price_factor+'", ' +os.EOL+
-        '"max_allowed_gas_price"'+': '+'"'+max_allowed_gas_price+'", ' +os.EOL+
-        '"dh_max_holding_time_in_minutes"'+': '+'"'+dh_max_holding_time_in_minutes+'" ' +os.EOL+
+        '"max_allowed_gas_price"'+': '+'"'+max_allowed_gas_price+'" ' +os.EOL+
         '}, ' +os.EOL+
         '"network"'+": { " +os.EOL+
         '"hostname"'+': '+'"'+hostname+'"'+", "+os.EOL+
