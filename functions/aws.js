@@ -18,7 +18,7 @@ module.exports = {
       var dl_s3 = "sudo aws s3 cp s3://"+aws_bucket_filepath+" ~/OTawsbackup --recursive"
       console.log('\x1b[35m',"Downloading backup from AWS s3...");
       console.log('\x1b[35m',"This could take a while...");
-      await exec(dl_s3,{maxBuffer: 1024 * 100000});
+      await exec(dl_s3,{maxBuffer: 1024 * 100000000});
 
       var dl_check = "find ~/OTawsbackup  -type f | wc -l"
       var dl = await exec(dl_check);
