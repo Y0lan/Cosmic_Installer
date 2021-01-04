@@ -52,7 +52,7 @@ Create an https://etherscan.io/ account and create a new api in the account sect
 Operational wallet must have 3k TRAC and enough ETH to pay for 2 blockchain transactions.
 
 <b>Required for aws s3 features:</b><br>
-Create an https://aws.amazon.com/s3/ account and create a new api access key and secret if you want to configure the installer to interact with aws s3 storage.<br>
+Create an https://aws.amazon.com/s3/ account and create a new api access key and secret if you want to configure the installer to interact with aws s3 storage. ALWAYS CHECK YOUR ARANGODB SIZE IN YOUR NEWEST BACKUP BEFORE DELETING ANY OLD BACKUP FILES.<br>
 
 <b>Required for automatic system updates or nodes that were not created with the installer.</b><br>
 Run sudo docker update --restart=always otnode to make sure the node restart on reboot.<br>
