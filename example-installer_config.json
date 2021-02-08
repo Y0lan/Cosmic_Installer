@@ -120,7 +120,7 @@
           "frequency" : "0 0 1 * *"
         },
         "auto_system_updates":{
-          "enabled" : "true",
+          "enabled" : "false",
           "telegram_bot_token" : "*telegram bot token here*",
           "frequency" : "0 4 * * 0"
         },
