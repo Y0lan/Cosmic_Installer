@@ -4,7 +4,10 @@ The Cosmic Installer is a general purpose tool used to streamline the interactio
 <br><br>
 Before running the installer, please see the instructions below and <b>requirements</b> below.
 <br>
-
+<br>
+<b>Never</b> delete your backups on aws until you have successfully uploaded a back up from your migrated node AND the arandoDB sizes match.<br>
+<b>Never</b> destroy/wipe your old server before testing that the migrated node is working properly.
+<br><br>
 Donations are always welcome! Thank you! <br>
 Ethereum: 0x514a264512EB9297aAB63e79b000E0bd26EE0734<br>
 
